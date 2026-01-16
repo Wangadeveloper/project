@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}
+{% block title %}<title>loan application</title> {% endblock %}
+<link rel="stylesheet" href="{{url_for('static',filename='account.css')}}">
+
+{% endblock %}
+
+{% block body %}
+<div class="navbar">
+    <h1>User Dashboard</h1>
+    <a href="{{url_for('main.logout')}}">Logout</a>
+</div>
+<div class="container">
+    <h2>Welcome, {{current_user.username}}!</h2>
+    <p>Select an option below to get started:</p>
+
+    <div class="card">
+        <h3><a href="{{url_for('main.loan_risk_assessment')}}">Loan Risk Assessment</a></h3>
+        <p>Analyze your financial data and get loan recommendations.</p>
+    </div>
+</div>
+{% endblock %}

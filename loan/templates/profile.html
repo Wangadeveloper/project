@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Fill your Profile Info</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="full_names">Full Name</label>
+            {{ form.full_names(class="form-control", placeholder="Enter your full name") }}
+            {% for error in form.full_names.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Monthly Income -->
+        <div class="form-group">
+            <label for="monthly_income">Monthly Income (KES)</label>
+            {{ form.monthly_income(class="form-control", placeholder="Enter monthly income") }}
+            {% for error in form.monthly_income.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Business Type -->
+        <div class="form-group">
+            <label for="business_type">Business Type</label>
+            {{ form.business_type(class="form-control", placeholder="Enter business type") }}
+            {% for error in form.business_type.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Business Level -->
+        <div class="form-group">
+            <label for="business_level">Business Level</label>
+            {{ form.business_level(class="form-control", placeholder="Enter business level") }}
+            {% for error in form.business_level.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            {{ form.phone(class="form-control", placeholder="Enter phone number") }}
+            {% for error in form.phone.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Country -->
+        <div class="form-group">
+            <label for="country">Country</label>
+            {{ form.country(class="form-control", placeholder="Enter country") }}
+            {% for error in form.country.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+            <label for="location">Location of Residence</label>
+            {{ form.location(class="form-control", placeholder="Enter your location") }}
+            {% for error in form.location.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+
+    </form>
+</div>
+{% endblock %}

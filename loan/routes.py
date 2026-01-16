@@ -77,6 +77,7 @@ def logout():
 
 
 @main.route("/dashboard")
+@login_required
 def dashboard():
     return render_template("account_info.html")
 
@@ -84,6 +85,7 @@ from loan.repositories.profile_repo import ProfileRepository
 from loan.forms import UserProfileForm
 
 @main.route("/profile", methods=["GET", "POST"])
+@login_required
 def profile():
     form = UserProfileForm()
 
@@ -128,14 +130,17 @@ def profile():
     return render_template("profile.html", form=form)
 
 @main.route('/user_account')
+@login_required
 def user_account():
     return render_template('account_info.html')
 
 @main.route('/account')
+@login_required
 def account():
     return render_template("account.html")
 
 @main.route("/loan-risk-assessment", methods=["GET", "POST"])
+@login_required
 def loan_risk_assessment():
     form = LoanRiskAssessmentForm()
 

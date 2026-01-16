@@ -80,7 +80,7 @@ All user data is securely stored in the **custom RDBMS**.
 
 ---
 
-![try out the website](https://project-9fwd.onrender.com/)
+[try out the website](https://project-9fwd.onrender.com/)
 
 ## Directory Structure
 

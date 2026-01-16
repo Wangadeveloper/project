@@ -1,6 +1,5 @@
 # Loan App – Pesapal Junior Dev Challenge 2026 Submission
 
-![Loan App Banner](https://via.placeholder.com/800x200.png?text=Loan+App+Demo)
 
 ## Overview
 
@@ -54,7 +53,7 @@ The **Flask frontend** interacts with the custom RDBMS for all operations:
 - **Loan Application & AI Advice**:
   - Users enter their **business type, income, and repayment details**  
   - App sends this data to a **Gemini AI model** for personalized financial advice  
-  - AI recommendations are compiled into **downloadable PDF reports**  
+  - AI recommendations are compiled into **downloadable PDF reports** ,the download link appears at the bottom of the same form after submission and analysis is made
 
 ---
 
@@ -80,6 +79,8 @@ The project incorporates **Google’s Gemini AI** for advanced financial analysi
 All user data is securely stored in the **custom RDBMS**.
 
 ---
+
+![try out the website](https://project-9fwd.onrender.com/)
 
 ## Directory Structure
 

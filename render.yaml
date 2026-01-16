@@ -1,0 +1,16 @@
+# Exported from Render on 2026-01-16T09:57:35Z
+version: "1"
+services:
+- type: web
+  name: project
+  runtime: python
+  repo: https://github.com/Wangadeveloper/project
+  plan: free
+  envVars:
+  - key: GOOGLE_API_KEY
+    sync: false
+  region: frankfurt
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn "loan:create_app()" --bind 0.0.0.0:$PORT --workers 2 --timeout
+    120
+  autoDeployTrigger: commit

@@ -1,17 +1,17 @@
-from loan import db
+from flask import current_app
 
 class UserRepository:
 
     @staticmethod
     def create(username, email, password_hash):
-        db.execute(
-            "INSERT INTO users VALUES (?, ?, ?)",
+        current_app.db.execute(
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
             [username, email, password_hash]
         )
 
     @staticmethod
     def get_by_email(email):
-        rows = db.execute(
+        rows, _ = current_app.db.execute(
             "SELECT * FROM users WHERE email = ?",
             [email]
         )
@@ -19,7 +19,7 @@ class UserRepository:
 
     @staticmethod
     def get_by_id(user_id):
-        rows = db.execute(
+        rows, _ = current_app.db.execute(
             "SELECT * FROM users WHERE id = ?",
             [user_id]
         )

@@ -13,7 +13,6 @@ class Database:
         return os.path.join(self.data_dir, f"{table_name}.json")
 
     def _load_tables(self):
-        # Load all JSON files in data_dir as tables
         for filename in os.listdir(self.data_dir):
             if filename.endswith(".json"):
                 table_name = filename.replace(".json", "")
@@ -32,7 +31,7 @@ class Database:
     def execute(self, sql, params=None):
         if params is None:
             params = []
-        result, updated_table = execute_sql(self, sql.strip(), params)
+        rows, updated_table = execute_sql(self, sql.strip(), params)
         if updated_table:
             self.save_table(updated_table)
-        return result
+        return rows, updated_table

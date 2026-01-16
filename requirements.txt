@@ -11,3 +11,4 @@ google-generativeai==0.3.2
 python-dotenv==1.0.1
 simplejson==3.19.1
 dataclasses==0.8
+gunicorn
